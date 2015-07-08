@@ -1,3 +1,5 @@
 $(function() {
-  $('select').styler();
+  if ($('select').length) {
+    $('select').styler();
+  };
 });
