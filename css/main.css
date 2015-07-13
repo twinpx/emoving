@@ -658,7 +658,6 @@ footer {
   background: #fff;
   margin-bottom: 20px;
   padding: 0 20px;
-  line-height: 66px;
   font-size: 18px;
   color: #999999;
   text-align: left;
@@ -832,6 +831,255 @@ h2.about{
   display: table;
 }
 
+
+.profile-menu {
+  text-align: right;
+  margin: 12px 0 0 0;
+}
+.profile-menu a{
+  text-align: right;
+  font-size: 18px;
+  color: #ff7011;
+  text-decoration: none;
+  margin: 0 0px 0 45px;
+}
+.profile-menu a:hover{
+  text-decoration: underline;
+}
+.profile-menu a.current{
+  color:  #666;
+}
+
+.b-dest h1{
+  margin-top: 8px;
+}
+.profile{
+  margin-top: 20px;
+}
+.profile-destination{
+
+}
+.profile-destination .item{
+  border-bottom: 1px solid #f6f6f6;
+  padding: 15px 15px 14px;
+}
+.profile-destination .item:first-child{
+  border-top: 1px solid #f6f6f6;
+}
+.profile-destination .item:before,
+.profile-destination .item:after,
+.prof-destination-cont .item:before,
+.prof-destination-cont .item:after,
+.you-can-add .item:before,
+.you-can-add .item:after{
+  content: '';
+  clear: both;
+  display: table;
+}
+.profile-sidebar{
+  padding: 4px 20px;
+  background: #f6f6f6;
+  margin: 0 0 35px;
+}
+.prof-destination-cont{
+  border-bottom: 1px solid #fff;
+  margin: -4px -20px 35px;
+  padding: 0 20px 25px;
+}
+.prof-destination-cont .item{
+  font-size: 14px;
+  margin: 0 0 7px;
+}
+.prof-destination-cont .item span{
+  float: right;
+  font-size: 18px;
+  margin: -1px 7px 0 0px;
+}
+.prof-destination-cont .green{
+  color: #4baf3c;
+}
+.prof-destination-cont .red{
+  color: #ff4b4b;
+}
+.prof-balance{
+  padding: 0 6px 0 0;
+}
+.you-can-add{
+  border-top: 1px solid #e5e5e5;
+  font-size: 12px;
+  color: #666;
+  padding: 17px 16px 0 0px;
+  text-align: center;
+  margin: -3px 0 13px;
+}
+.you-can-add .item{
+  font-size: 24px;
+  color: #4baf3c;
+  text-align: left;
+  margin: 10px 0 0;
+}
+.you-can-add .item span{
+  float: right;
+  font-size: 24px;
+}
+.you-can-add .item span small{
+  font-size: 16px;
+  position: relative;
+  top: -5px;
+  right: -5px;
+  padding: 0px 0px 0 2px;
+}
+.you-can-add .item input{
+  width: 130px;
+  height: 60px;
+  border-radius: 3px;
+  background: #fff;
+  border:none;
+  text-align: right;
+  font-size: 18px;
+  color: #999;
+  padding: 0 17px;
+  margin: 5px 0 0 -6px;
+}
+.number-area{
+  padding: 17px 7px 0 0px;
+}
+.number-area .item span{
+  color: #999;
+  margin: 18px 9px 0 0;
+}
+.paypal{
+  width: 280px;
+  height: 60px;
+  background: url(../images/paypal.png) 0 0 no-repeat;
+  display: block;
+  max-width: 100%;
+  background-size: 100%;
+  margin: 21px 0 40px 0;
+}
+
+.add-new-dest{
+  background: #f6f6f6;
+  padding: 0 0 30px;
+  text-align: center;
+  display: block;
+  margin-bottom: -10px;
+}
+.add-new-dest img{
+  max-width: 100%;
+}
+.add-new-dest span{
+  float: none;
+  display: inline-block;
+  padding: 7px 25px;
+  margin-top: 35px;
+  margin-right: 14px;
+}
+.prof-destination{
+  padding: 0 8px 0 0;
+}
+.dest-status{
+  border: 1px solid #f6f6f6;
+  border-radius: 5px;
+  width: 73px;
+  height: 40px;
+  line-height: 40px;
+  margin-right: 20px;
+  float: left;
+  text-align: center;
+}
+.dest-status .new{
+  font-size: 14px;
+  color: #1a91dd;
+}
+.dest-status .on-l{
+  color: #6ac65d;
+  background: url(../images/green.png) 10px center no-repeat;
+  padding-left: 25px;
+}
+.dest-status .off-l{
+  color: #ff4b4b;
+  background: url(../images/red.png) 10px center no-repeat;
+  padding-left: 25px;
+}
+.desc-town{
+  line-height: 40px;
+  font-size: 18px;
+  color: #666;
+}
+.desc-town span{
+  margin:0 16px 0 7px;
+  background: url(../images/sprites.png) -33px -3px no-repeat;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+}
+.profile-destination-links{
+  text-align: right;
+}
+.profile-destination-links .d-btn{
+  font-size: 14px;
+  color: #fff;
+  border-radius: 3px;
+  padding: 0 21px;
+  height: 32px;
+  line-height: 32px;
+  background: #ad56bd;
+  display: inline-block;
+  margin: 0 0 0 4px;
+  vertical-align: text-top;
+}
+.profile-destination-links .d-btn:hover{
+  text-decoration: none;
+  opacity: 0.8;
+}
+.profile-destination-links .date{
+  display: inline-block;
+  font-size: 11px;
+  color: #333333;
+  line-height: 40px;
+  vertical-align: top;
+}
+.profile-destination-links .add{
+  background: #009ae0;
+  padding: 0 28px;
+}
+.profile-destination-links .off{
+  background: #ff4b4b;
+  padding: 0 14px;
+}
+.profile-destination-links .edit{
+  background: #f8af00;
+  padding: 0 28px;
+}
+.profile-destination-links .on{
+  background: #6ac65d;
+  padding: 0 16px;
+}
+.navigation{
+  padding: 23px 0 0;
+}
+.navigation a,
+.navigation span{
+  font-size: 18px;
+  color: #ff7011;
+  text-decoration: none;
+  margin: 0 6px 0 19px;
+}
+.no-money{
+  background: #ff4b4b;
+  font-size: 18px;
+  color: #fff;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 90px;
+  border-radius: 3px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 407px;
+  margin: 0 0 0 -202px;
+}
 @media (min-width: 992px) and (max-width: 1199px) {
   .item-down {
       position: relative;
@@ -952,6 +1200,10 @@ h2.about{
     top: 11px;
     right: 20px;
   }
+  .block2__item:nth-child(2):before,
+  .block2__item:nth-child(2):after{
+    display: none;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1034,7 +1286,18 @@ h2.about{
   .marginb div:nth-child(2){display: none;}
   .contacts{padding: 0 15px;}
   .header-login-form{
-    margin-top: 30px;
+    margin-top: 26px;
+  }
+  .close_ico {
+    width: 20px;
+    height: 20px;
+    background-position: -47px 0px;
+    top: -1px;
+    margin: 0 0 0 22px;
+  }
+  .text4, .small-statics__item__title {
+    font-size: 11px;
+    text-transform: uppercase;
   }
   header .btn-default{
     padding: 7px 27px;
@@ -1121,6 +1384,60 @@ h2.about{
   .search-results__request__item{
     margin-top: 30px;
     margin-bottom: 33px;
+  }
+  .block2__item:nth-child(2):before,
+  .block2__item:nth-child(2):after{
+    display: none;
+  }
+  .profile{
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .no-money{
+    display: none;
+  }
+  .profile-menu{
+    text-align: center;
+    margin: 15px 0 0 0;
+  }
+  .profile-menu a{
+    margin: 0 21px 0 24px
+  }
+  .b-dest h1{
+    margin-top: 23px;
+  }
+  .profile{
+    margin-top: 30px;
+  }
+  .profile-destination-links{
+    margin-top: 8px;
+  }
+  .navigation {
+    padding: 29px 0 0px;
+    margin: 0 0 48px 21px;
+  }
+  .prof-destination-cont{
+    padding: 0 40px 25px 48px;
+  }
+  .you-can-add .item{
+    margin: 10px 20px 0 30px;
+  }
+  .paypal {
+    width: 300px;
+    background-size: initial;
+    margin: 20px 0 40px 20px;
+  }
+  .add-new-dest {
+    padding: 0 0 34px;
+    margin-bottom: 36px;
+    margin-top: 40px;
+  }
+  .add-new-dest img{
+    width: 100%;
+  }
+  .add-new-dest span{
+    margin-top: 36px;
+    margin-right: -13px;
   }
 }
 
