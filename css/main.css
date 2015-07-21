@@ -837,7 +837,8 @@ h2.about{
   text-align: right;
   margin: 12px 0 0 0;
 }
-.profile-menu a{
+.profile-menu a,
+.profile-menu span{
   text-align: right;
   font-size: 18px;
   color: #ff7011;
@@ -847,7 +848,7 @@ h2.about{
 .profile-menu a:hover{
   text-decoration: underline;
 }
-.profile-menu a.current{
+.profile-menu span.current{
   color:  #666;
 }
 
@@ -862,7 +863,8 @@ h2.about{
 }
 .profile-destination .item{
   border-bottom: 1px solid #f6f6f6;
-  padding: 15px 15px 14px;
+  padding: 15px 15px 15px;
+  margin: 0px 0 -1px 0;
 }
 .profile-destination .item:first-child{
   border-top: 1px solid #f6f6f6;
@@ -889,11 +891,11 @@ h2.about{
 }
 .prof-destination-cont .item{
   font-size: 14px;
-  margin: 0 0 7px;
+  margin: 0 0 11px;
 }
 .prof-destination-cont .item span{
   float: right;
-  font-size: 18px;
+  font-size: 14px;
   margin: -1px 7px 0 0px;
 }
 .prof-destination-cont .green{
@@ -940,7 +942,7 @@ h2.about{
   font-size: 18px;
   color: #999;
   padding: 0 17px;
-  margin: 5px 0 0 -6px;
+  margin: 5px 0 0 -5px;
 }
 .number-area{
   padding: 17px 7px 0 0px;
@@ -956,7 +958,7 @@ h2.about{
   display: block;
   max-width: 100%;
   background-size: 100%;
-  margin: 21px 0 40px 0;
+  margin: 21px 0 40px -4px;
 }
 
 .add-new-dest{
@@ -1066,6 +1068,9 @@ h2.about{
   color: #ff7011;
   text-decoration: none;
   margin: 0 6px 0 19px;
+}
+.navigation .current{
+  color: #666;
 }
 .no-money{
   background: #ff4b4b;
@@ -1211,6 +1216,98 @@ h2.about{
   margin: 32px 0 0 0;
 }
 
+.error-has{
+  box-shadow: inset #ff0000 0 0 0px 3px;
+}
+
+.add-new-destination{
+  padding: 10px 70px 27px;
+  margin-bottom: -5px;
+}
+.add-new-destination .item{
+  clear: both;
+  text-align: left;
+  margin: 0 0 -5px;
+}
+.add-new-destination .item:before,
+.add-new-destination .item:after{
+  content: '';
+  display: table;
+  clear: both;
+}
+.add-new-destination .item .left{
+  display: inline-block;
+  width: 152px;
+  max-width: 100%;
+  line-height: 60px;
+  text-align: left;
+  font-size: 18px;
+  color: #999999;
+  margin: 4px 0 0 15px;
+  float: none;
+}
+.add-new-destination .item .center{
+  display: inline-block;
+  width: 484px;
+  max-width: 100%;
+  margin: 0 17px;
+}
+.add-new-destination .item .right{
+  display: inline-block;
+  width: 65px;
+  max-width: 100%;
+  line-height: 60px;
+  text-align: left;
+  font-size: 18px;
+  color: #999999;
+  margin: 0 0 0 3px;
+  float: none;
+}
+
+.add-new-destination .error {
+  width: 47% !important;
+  margin-top: 3px !important;
+  margin-bottom: 19px;
+  margin-left: -10px;
+}
+
+.add-new-destination .btn2{
+  background-color: #cccccc;
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  padding: 16px 10px;
+  float: none;
+  width: 37%;
+  margin-top: 28px;
+  text-align: center;
+  margin-left: 17px;
+}
+.add-new-destination .btn2:hover,
+.add-new-destination .btn2:focus,
+.add-new-destination .btn2:active{
+  background: #b6b6b6;
+  border-color: #b6b6b6;
+}
+
+
+.thank-add-destination .thank{
+  background: url(../images/thank-add-destination.png) top center no-repeat;
+  padding-top: 55px;
+  margin-top: -49px;
+  margin-left: 31px;
+}
+.thank-add-destination  .btn1__mod2{
+  margin: 38px 0 0 30px;
+  padding: 6px 63px;
+}
+.thank-add-destination .big-text{
+  line-height: 25px;
+  margin-left: 32px;
+}
+
 @media (min-width: 992px) and (max-width: 1199px) {
   .item-down {
       position: relative;
@@ -1337,6 +1434,9 @@ h2.about{
   }
   .search-results__item__title h1 {
     margin-left: 10px;
+  }
+  .add-new-destination .item .center{
+    width: 265px;
   }
 }
 
@@ -1671,6 +1771,28 @@ h2.about{
   .registration-form textarea {
     height: 141px;
     margin-bottom: 0px;
+  }
+  .add-new-destination .item{
+    margin: 0px;
+  }
+  .add-new-destination .item .left{
+    width: 88px;
+    margin: 4px 0 0 40px;
+  }
+  .add-new-destination .item .center{
+    width: 103px;
+  }
+  .add-new-destination .item .right{
+    width: 82px;
+    text-align: right;
+  }
+  .add-new-destination .btn1{
+    width: 38% !important;
+    margin-top: 21px !important;
+  }
+  .add-new-destination {
+    margin-bottom: 60px !important;
+    padding: 10px 0px 30px!important;
   }
 }
 
