@@ -1136,6 +1136,81 @@ h2.about{
 .my-profile .add-new-dest{
   margin-bottom: -15px;
 }
+
+.error{
+  background: #ff4b4b;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.error:hover{
+  background: #ec2323;
+}
+
+.registration-form{
+    margin-bottom: 24px;
+}
+.registration-form .security{
+  border: 1px solid #e8e8e8;
+  clear: both;
+  margin: 5px -5px 26px;
+  padding: 6px 0 9px;
+}
+
+.registration-form .security h3{
+  font-size: 14px;
+  color: #666666;
+  text-transform: uppercase;
+  position: relative;
+  margin: -12px 0 25px 0;
+}
+.registration-form .security h3 span{
+  background: #f6f6f6;
+  padding: 0 5px;
+}
+.registration-form .security img{
+  margin: 10px 0 0 -46px;
+}
+.registration-h1{
+  margin-top: 45px;
+  margin-bottom: -26px;
+}
+.registration-form .error{
+  width: 47% !important;
+  margin-top: 5px !important;
+  margin-bottom: 17px;
+}
+
+.cl{
+  clear: both;
+}
+
+.fileup{
+  background: #fff url(../images/fileup.png) 97.5% 67% no-repeat !important;
+}
+
+.fileup-hidden{
+  display: none !important;
+}
+
+.registration-form textarea{
+  height: 168px;
+}
+
+.registration-form2{
+  margin-bottom: 16px;
+  padding-bottom: 36px;
+}
+
+.thank-register .thank{
+  background: url(../images/thank-register.png) top center no-repeat;
+  padding-top: 55px;
+  margin-top: -52px;
+}
+.thank-register .btn1__mod2{
+  margin: 32px 0 0 0;
+}
+
 @media (min-width: 992px) and (max-width: 1199px) {
   .item-down {
       position: relative;
@@ -1567,6 +1642,35 @@ h2.about{
   }
   .block2__item:nth-child(3) .block2__item__btn{
     top: 0;
+  }
+  .registration-h1{
+    margin-top: 28px;
+    margin-bottom: 38px;
+  }
+  .registration-form{
+    margin-bottom: 32px !important;
+    padding: 10px 0px 35px!important;
+  }
+  .registration-form .error{
+    width: 93% !important;
+  }
+  .registration-form input{
+    margin-top: 3px !important;
+    margin-bottom: 15px !important;
+  }
+  .registration-form .security{
+    margin: 35px 0px 13px;
+    padding: 6px 0 21px;
+  }
+  .registration-form .security img {
+    margin: 10px 0 28px 23px;
+  }
+  .fileup{
+    background: #fff url(../images/fileup.png) 95.5% 52% no-repeat !important;
+  }
+  .registration-form textarea {
+    height: 141px;
+    margin-bottom: 0px;
   }
 }
 
