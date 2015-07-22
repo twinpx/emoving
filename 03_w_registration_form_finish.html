@@ -33,23 +33,23 @@
 						<form action="03_w_registration_form_finish_message.html">
 						  <fieldset>
 						    <div class="col-xs-12 col-sm-12">
-							    <input type='text' placeholder='Company name'>
+							    <input name="company-name" type="name" required placeholder='Company name'>
 						    </div>
 						    <div class="col-xs-12 col-sm-12">
-							    <input type='text' placeholder='Name, Surname'>
+							    <input name="name" type="name" required placeholder='Name, Surname'>
 						    </div>
 						    <div class="col-xs-12 col-sm-6">
-							    <input type='text' placeholder='Post code (ZIP)'>
+							    <input name="postcode" type="number" min="1001" max="8000" maxlength="4" required placeholder='Post code (ZIP)'>
 						    </div>
 						    <div class="col-xs-12 col-sm-6">
-							    <input type='text' placeholder='Adress'>
+							    <input type='text' placeholder='Adress' required>
 						    </div>
 						    <div class="cl"></div>
 						    <div class="col-xs-12 col-sm-6">
-							    <input type='text' placeholder='Web site'>
+							    <input name="url" type="url" placeholder='Web site' required>
 						    </div>
 						    <div class="col-xs-12 col-sm-6">
-							    <input type='text' placeholder='Phone'>
+							    <input type="tel" name="tel" pattern="\d{10}" required placeholder='Phone'>
 						    </div>
 						    <div class="cl"></div>
 						    <div class="col-xs-12 col-sm-12">
@@ -57,7 +57,7 @@
 							    <input type='file' class="fileup-hidden">
 						    </div>
 						    <div class="col-xs-12 col-sm-12">
-							    <textarea placeholder='About your company'></textarea>
+							    <textarea name="comment" required placeholder='About your company'></textarea>
 						    </div>
 						    
 						    

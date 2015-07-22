@@ -101,14 +101,14 @@
 						<form action="contacts_form_message.html">
 						  <fieldset>
 						    <div class="col-xs-12 col-sm-6">
-							    <input type='text' placeholder='Your email'>
+							    <input name="email" type="email" required  placeholder='Your email'>
 						    </div>
 						    <div class="col-xs-12 col-sm-6">
-							    <input type='text' placeholder='You Phone'>
+							    <input type="tel" name="tel" pattern="\d{10}" required type='text' placeholder='You Phone'>
 						    </div>
 						 		
 						    <div class="col-xs-12">
-							    <textarea placeholder='Description'></textarea>
+							    <textarea name="comment" required  placeholder='Description'></textarea>
 						    </div>
 						    
 						    <button class="btn1 col-xs-11 col-sm-9 col-md-4">Send</button>

@@ -38,7 +38,7 @@ header .btn-default{
 }
 
 .header-login-form {
-  margin-top: 37px;
+  margin-top: 39px;
   text-align: right;
 }
 
@@ -186,6 +186,8 @@ h2.search-f-title{
 .search-filter .btn1{
   margin-top: 25px;
   width: 31%;
+  padding: 18px 10px 15px;
+  left: 2px;
 }
 .jq-selectbox{
   width: 100%;
@@ -324,6 +326,9 @@ h2.otheroffers{
   clear: both;
   display: table;
 }
+.hot-offers h2{
+  margin-bottom: 31px;
+}
 .hot-offers:after,
 .hot-offers__item:after,
 .search-results__best-deal__item:after{
@@ -335,7 +340,7 @@ h2.otheroffers{
   height: 70px;
   border-top: 1px solid #f6f6f6;
   text-align: left;
-  padding: 11px 0 0 0;
+  padding: 6px 0 0 0;
 }
 .hot-offers__item:last-child {
   border-bottom: 1px solid #f6f6f6;
@@ -396,25 +401,30 @@ h2.otheroffers{
 .small-statics__item:nth-child(2){
   padding-left:0px;
   padding-right: 14px;
+  margin-right: -1px;
+}
+.small-statics__item:nth-child(3){
+  margin-right: 5px;
 }
 .small-statics__item:last-child{
   padding-right:0px;
   padding-left: 13px;
+  margin-left: -4px;
 }
 .small-statics__item__title {
   position: absolute;
   top: 23px;
-  left: 30px;
+  left: 24px;
 }
 .small-statics__item__details {
   position: relative;
-  top: 60%;
-  left: 19px;
+  top: 61%;
+  left: 24px;
 }
 .small-statics__item__details span.text4, .small-statics__item__details span.small-statics__item__title {
-  position: absolute;
-  top: 10px;
-  left: 60px;
+  position: relative;
+  top: -28px;
+  margin-left: 12px;
 }
 .small-statics__inner {
   height: 235px;
@@ -425,11 +435,27 @@ h2.otheroffers{
 .small-statics__inner__mod2 {
   background: #f8c100 url(../images/ss2.png) right -8px no-repeat;
 }
+.small-statics__inner__mod2 .small-statics__item__title{
+  left: 30px;
+}
+.small-statics__inner__mod2 .small-statics__item__details span.text4{
+  margin-left: 20px;
+}
 .small-statics__inner__mod3 {
   background: #745cb3 url(../images/ss2.png) right -8px no-repeat;
 }
+.small-statics__inner__mod3 .small-statics__item__details span.text4{
+  margin-left: 20px;
+}
+.small-statics__inner__mod3 .small-statics__item__title{
+  left: 29px;
+}
 .small-statics__inner__mod4 {
   background: #8bc734 url(../images/ss2.png) right -8px no-repeat;
+}
+.small-statics__inner__mod4 .small-statics__item__title{
+  left: 37px;
+  line-height: 23px;
 }
 
 footer {
@@ -532,17 +558,32 @@ footer {
   padding: 10px 35px;
   margin: 0 15px;
 }
-
+.btn-default__mod2:hover{
+  background: #fa9606;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #fa9606;
+}
 .btn-default__mod2 {
   border-color: #ff7011;
 }
-
+.btn-default__mod2:focus,
+.btn-default__mod2:active{
+  background: #fc440e;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #fc440e;
+}
 .btn-default__mod3 {
   border: 0;
 }
-.btn-default__mod3:hover {
-  background: none;
-  text-decoration: underline;
+.btn-default__mod3:hover,
+.btn-default__mod3:focus,
+.btn-default__mod3:active {
+  background: none !important;
+  text-decoration: underline !important;
+  color: #fc440e !important;
+  box-shadow: none !important;
 }
 
 .btn1 {
@@ -1438,6 +1479,17 @@ h2.about{
   .add-new-destination .item .center{
     width: 265px;
   }
+  .small-statics{
+    font-size: 0px;
+  }
+  .small-statics__item {
+    display: inline-block;
+    float: none;
+    margin-bottom: 20px;
+    margin-right: 0px !important;
+    padding: 0 5px !important;
+    margin-left: 0px !important;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1478,10 +1530,16 @@ h2.about{
   .search-filter{
     padding: 0 20px;
   }
+  .small-statics{
+    font-size: 0px;
+  }
   .small-statics__item {
     display: inline-block;
     float: none;
     margin-bottom: 20px;
+    margin-right: 0px !important;
+    padding: 0 5px !important;
+    margin-left: 0px !important;
   }
   .select{
     margin-left: 0px;
