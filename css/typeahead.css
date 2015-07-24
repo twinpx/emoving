@@ -1,0 +1,15 @@
+/* dropdown list css */
+.typeahead.dropdown-menu {
+  border-radius: 0;
+  padding: 0;
+  border-color: #f77101;
+  right: 15px;
+  box-shadow: 0 0 0;
+}
+.typeahead.dropdown-menu > .active > a, 
+.typeahead.dropdown-menu > .active > a:focus {
+    background-color: #f77101;
+}
+.typeahead.dropdown-menu > .active > a:hover {
+  background-color: #E4E4E4;
+}
