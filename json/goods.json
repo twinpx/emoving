@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Buffet with top",
+    "group": "Paraphernalia",
+    "volume": 10
+  },
+  {
+    "name": "Buffet without top",
+    "group": "Paraphernalia",
+    "volume": 11
+  },
+  {
+    "name": "Buffet",
+    "group": "Paraphernalia",
+    "volume": 11
+  },
+  {
+    "name": "Bicycle/moped",
+    "group": "Paraphernalia",
+    "volume": 9
+  },
+  {
+    "name": "Fan",
+    "group": "Paraphernalia",
+    "volume": 10
+  },
+  {
+    "name": "Coat rack/stand",
+    "group": "Paraphernalia",
+    "volume": 12
+  },
+  {
+    "name": "Playpen",
+    "group": "Furniture",
+    "volume": 12
+  },
+  {
+    "name": "Bed single",
+    "group": "Furniture",
+    "volume": 12
+  },
+  {
+    "name": "Cooler",
+    "group": "Furniture",
+    "volume": 12
+  },
+  {
+    "name": "Bed double",
+    "group": "Furniture",
+    "volume": 11
+  }
+]

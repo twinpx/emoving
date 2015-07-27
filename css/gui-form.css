@@ -1,0 +1,291 @@
+.search-filter {
+    position: relative;
+}
+
+.hiddenCont {
+    position: absolute;
+    z-index: 1020;
+    top: 75px;
+}
+
+.hiddenCont[data-type="logguage"] {
+    top: 155px;
+}
+.dropdown-arr {
+  display: none;  
+}
+@media (min-width: 767px) {
+  .dropdown-arr {
+        display: block;
+      position: absolute;
+      top: 15px;
+      right: 30px;
+      width: 30px;
+      height: 30px;
+      overflow: hidden;
+      background: url(../images/sprites.png) left top no-repeat;
+  }
+}
+
+.dropdown-arr.active {
+    background-position: left -45px;
+}
+
+.hiddenCont {
+    display: none;
+}
+
+.gui-form a {
+  cursor: pointer;
+}
+.gui-form {
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 3px 7px 0;
+    padding: 34px 7px 41px;
+    margin: 0 0 0 0;
+    text-align: center;
+}
+.gui-form1.gui-form .ln-letters {
+  display: block;
+  text-align: left;
+}
+.gui-form1.gui-form .ln-letters a {
+  margin: 0 0 0 15px;
+}
+.gui-form ul {
+    height: 400px;
+    overflow-y: auto;
+    margin-right: 10px;
+}
+
+.gui-form .title,
+.gui-form .ln-letters {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 15px 24px;
+}
+
+.gui-form .title a,
+.gui-form .ln-letters a {
+    font-size: 18px;
+    color: #ff7011;
+    /*margin: 0 0 0 15px;*/
+}
+
+.gui-form .title a:hover,
+.gui-form .ln-letters a:hover {
+    text-decoration: underline;
+}
+
+.gui-form .title .current,
+.gui-form .ln-letters .ln-selected {
+    color: #333;
+    text-decoration: underline;
+}
+
+.gui-form .content ul {
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.gui-form .content li {
+    list-style: none;
+    text-align: center;
+    /*padding: 5px 30px 5px;*/
+}
+
+.gui-form .content .item {
+    font-size: 18px;
+    color: #333;
+    padding: 5px 30px 5px;
+    position: relative;
+    clear: none;
+    display: block;
+    list-style: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.gui-form .content .item:after {
+    clear: both;
+    content: '';
+    display: table;
+}
+
+.gui-form .content .listNavHide {
+    display: none;
+}
+
+.gui-form .content .item:hover {
+    background-color: #f6f6f6;
+}
+
+.gui-form .content .item.current {
+    color: #10a8ef;
+    background-image: url(../images/check.png);
+    background-position: 12px 13px;
+    background-repeat: no-repeat;
+}
+
+.gui-form .content .item .count {
+    position: absolute;
+    top: 3px;
+    right: 19px;
+    background-color: #fff;
+    padding: 0 0 0 15px;
+}
+
+.gui-form .content .item .outbound,
+.gui-form .content .item .inbound {
+    display: none;
+}
+
+#ounboundPoint .gui-form .content .item .outbound {
+    display: block;
+}
+
+#inboundPoint .gui-form .content .item .inbound {
+    display: block;
+}
+
+.gui-form .content .item:hover .count {
+    background-color: #f6f6f6;
+}
+
+.gui-form .content .item .count a {
+    font-size: 22px;
+    color: #10a8ef;
+    font-family: initial;
+    font-weight: 900;
+}
+
+.gui-form .content .item .count a:hover,
+.gui-form .content .item .count a:focus,
+.gui-form .content .item .count a:active {
+    color: #f77101;
+    text-decoration: none;
+}
+
+.gui-form .content .item .count a:last-child {
+    position: relative;
+    top: -2px;
+}
+
+.gui-form .content .item .count {
+    font-size: 18px;
+    color: #10a8ef;
+    margin: 0 20px;
+    position: absolute;
+}
+
+.gui-form .btn1,
+.gui-form .btn2 {
+    width: 32%;
+    margin: 43px 0 0 5px;
+}
+
+.gui-form2 .content .item:before,
+.gui-form2 .content .item:after {
+    display: none;
+    content: '';
+}
+
+#ounboundPoint .gui-form2 .content .item.outbound-null,
+#inboundPoint .gui-form2 .content .item.inbound-null {
+    color: #999;
+    cursor: default;
+    pointer-events: none;
+}
+
+.gui-form2 .content .item .count,
+.gui-form2 .content .item .inbound,
+.gui-form2 .content .item .outbound {
+    float: right;
+}
+.gui-form1 .content .item .count {
+  display: none;
+}
+
+.gui-form1 .content .item.current .count {
+  display: block;
+}
+
+.gui-form2 .title a,
+.gui-form2 .ln-letters a {
+    /*margin: 0 7px 0 17px;*/
+}
+.fake-input {
+    width: 100%;
+    height: 60px;
+    border-radius: 5px;
+    background: #fff;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    font-size: 18px;
+    color: #999999;
+    text-align: left;
+    border: 1px solid #fff;
+    display: block;
+    line-height: 60px;
+}
+.fake-input:hover {
+  border-color: #f77101;
+}
+.loader {
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+    left: 30px;
+    right: 30px;
+    background-color: #fff;
+    z-index: 1090;
+    display: none;
+}
+.spinner {
+  margin: 100px auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  text-align: center;
+  
+  -webkit-animation: sk-rotate 2.0s infinite linear;
+  animation: sk-rotate 2.0s infinite linear;
+}
+
+.dot1, .dot2 {
+  width: 60%;
+  height: 60%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  background-color: #333;
+  border-radius: 100%;
+  
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.dot2 {
+  top: auto;
+  bottom: 0;
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-rotate { 100% { -webkit-transform: rotate(360deg) }}
+@keyframes sk-rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
