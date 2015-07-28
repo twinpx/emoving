@@ -209,6 +209,21 @@
 .gui-form1 .content .item.current .count {
   display: block;
 }
+.gui-form1 .content .item.current .count input {
+  border: 0;
+  width: 20px;
+  display: inline-block;
+  vertical-align: top;
+  height: 25px;
+  line-height: 25px;
+  margin: 5px 0 0 0;
+  background: transparent;
+  color: #10a8ef;
+  text-align: center;
+  border-right: 0;
+  padding: 0;
+  font-size: 14px;
+}
 
 .gui-form2 .title a,
 .gui-form2 .ln-letters a {

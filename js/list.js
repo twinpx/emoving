@@ -24,7 +24,13 @@ jQuery(document).ready(function() {
         .listnav({
             includeNums: false,
             includeAll: false,
-            showCounts: false
+            showCounts: false,
+            preClick: function () {
+                $('#cityList').siblings('.loader').show();
+            },
+            onClick: function () {
+                $('#cityList').siblings('.loader').hide();
+            }
         });
         $('.hiddenCont').on('click', '#cityList-nav a', function() {
             $('#cityList').scrollTop(0);
@@ -37,6 +43,7 @@ jQuery(document).ready(function() {
             }),
             autoSelect: false
         });
+        $('#cityList').siblings('.loader').hide();
     });
 
     $.getJSON("json/jsonValues.js")
@@ -46,10 +53,10 @@ jQuery(document).ready(function() {
         $.each(data, function(i, group) {
             groups[group.NAME] = true;
             group.ELEMENTS.map(function (item) {
-                list += '<li class="col-sm-4 ' + group.NAME.replace(/\/|\\|\s/g, '-') + '"><span class="item"><span class="cityName">' + item.name + '</span>' +
+                list += '<li class="col-sm-4 ' + group.NAME.replace(/\/|\\|\s/g, '-') + '"><span class="item" data-id="' + item.id + '"><span class="cityName">' + item.name + '</span>' +
                     '<span class="count" data-volume="' + item.volume + '">' +
                     '<a href="javascript:void(0);" onclick="updateVolume(this, 1);">+</a> ' +
-                    '<span>0</span>' +
+                    '<input disabled name="goods['+ item.id +']" type="text" value="0">' +
                     ' <a href="javascript:void(0);" onclick="updateVolume(this, -1);">-</a>' +
                     '</span>' +
                     '</span></li>';
@@ -77,16 +84,17 @@ jQuery(document).ready(function() {
             }
             $list.scrollTop(0);
         });
+        $list.siblings('.loader').hide();
     });
 
     window.updateVolume = function(el, cnt) {
         var $el = $(el).parent('.count');
-        var count = $el.find('span').text();
+        var count = $el.find(':text').val();
         var updateValue = parseInt(count) + cnt;
         if (updateValue < 0) {
             return false;
         }
-        $el.find('span').text(updateValue);
+        $el.find(':text').val(updateValue);
         var volume = parseFloat($('#volume').val()) || 0;
         $('#volume').val((volume + parseFloat($el.data('volume')) * cnt).toFixed(2));
 
@@ -137,7 +145,7 @@ jQuery(document).ready(function() {
     });
     $('#goodsList').on('click', '.item', function(){
         if($(this).hasClass('current') == false) {
-            updateVolume($('span', this), 1);
+            updateVolume($(':text', this), 1);
         }
         $(this).addClass('current');
     });
