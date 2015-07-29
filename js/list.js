@@ -35,10 +35,22 @@ jQuery(document).ready(function() {
         $('.hiddenCont').on('click', '#cityList-nav a', function() {
             $('#cityList').scrollTop(0);
         });
-        $('.typeahead')
+        $('.typeahead[data-point="ounboundPoint"]')
         .removeAttr('disabled')
         .typeahead({
-            source: cities.map(function(item) {
+            source: cities.filter(function (item) {
+                return item.outbound != 0;
+            }).map(function(item) {
+                return item.name;
+            }),
+            autoSelect: false
+        });
+        $('.typeahead[data-point="inboundPoint"]')
+        .removeAttr('disabled')
+        .typeahead({
+            source: cities.filter(function (item) {
+                return item.inbound != 0;
+            }).map(function(item) {
                 return item.name;
             }),
             autoSelect: false
@@ -56,7 +68,7 @@ jQuery(document).ready(function() {
                 list += '<li class="col-sm-4 ' + group.NAME.replace(/\/|\\|\s/g, '-') + '"><span class="item" data-id="' + item.id + '"><span class="cityName">' + item.name + '</span>' +
                     '<span class="count" data-volume="' + item.volume + '">' +
                     '<a href="javascript:void(0);" onclick="updateVolume(this, 1);">+</a> ' +
-                    '<input disabled name="goods['+ item.id +']" type="text" value="0">' +
+                    '<input readonly name="goods['+ item.id +']" type="text" value="0">' +
                     ' <a href="javascript:void(0);" onclick="updateVolume(this, -1);">-</a>' +
                     '</span>' +
                     '</span></li>';
@@ -89,15 +101,17 @@ jQuery(document).ready(function() {
 
     window.updateVolume = function(el, cnt) {
         var $el = $(el).parent('.count');
-        var count = $el.find(':text').val();
+        var count = $el.find('input[type=text]').val();
         var updateValue = parseInt(count) + cnt;
+        if (updateValue == 0) {
+            $el.parents('.item').removeClass('current');
+        }
         if (updateValue < 0) {
             return false;
         }
-        $el.find(':text').val(updateValue);
+        $el.find('input[type=text]').val(updateValue);
         var volume = parseFloat($('#volume').val()) || 0;
         $('#volume').val((volume + parseFloat($el.data('volume')) * cnt).toFixed(2));
-
     };
 
     $('#cityList').on('click', '.item', function(e) {
@@ -143,10 +157,25 @@ jQuery(document).ready(function() {
             $('.dropdown-arr').removeClass('active');
         });
     });
-    $('#goodsList').on('click', '.item', function(){
-        if($(this).hasClass('current') == false) {
-            updateVolume($(':text', this), 1);
+
+    $('#goodsList').on('click', '.item .cityName', function(){
+        var $parentBlock = $(this).parents('.item');
+        var $input = $('input', $parentBlock);
+        if($(this).parents('.item').hasClass('current') == false) {
+            updateVolume($input, 1);
+            $(this).parents('.item').addClass('current');
         }
-        $(this).addClass('current');
+        else {
+            $(this).parents('.item').removeClass('current');
+            updateVolume($input, -parseInt($input.val()));
+        }
+    });
+
+    $('[data-toggle="resetCheck"]').on('click', function(){
+        $('#goodsList .item.current').each(function(){
+            $(this).removeClass('current');
+            var $input = $('input', this);
+            updateVolume($input, -parseInt($input.val()));
+        });
     });
 });
