@@ -2,8 +2,15 @@ jQuery(document).ready(function() {
     var cities = [];
     $.getJSON("json/jsonCities.js")
     .done(function(data) {
-        $.each(data, function(i, item) {
-            cities.push(item);
+        var cities = data.map(function (it) {
+            return it;
+        });
+        var outCities = cities.filter(function (item) {
+                return item.outbound != 0;
+            });
+
+        var inCities = cities.filter(function (item) {
+            return item.inbound != 0;
         });
 
         var list = '';
@@ -35,26 +42,56 @@ jQuery(document).ready(function() {
         $('.hiddenCont').on('click', '#cityList-nav a', function() {
             $('#cityList').scrollTop(0);
         });
+        var commonTypeaheadOptions = {
+            matcher: function (item) {
+                return ~item.replace(/<span>\d+<\/span>/gi,'').toLowerCase().indexOf(this.query.toLowerCase());
+            },
+            highlighter: function (item) {
+                var query = this.query.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, '\\$&');
+                var num = item.match(/<span>(\d+)<\/span>/);
+                return item.replace(/<span>\d+<\/span>/gi,'').replace(new RegExp('(' + query + ')', 'ig'), function ($1, match) {
+                        return '<strong>' + match + '</strong>';
+                    }) + (num&&num.length?('<span>'+num[1]+'</span>'):'');
+            },
+            onSelect: function (o) {
+                var el = this.$element;
+                setTimeout(function () {
+                    el&&el.val(o.value).change();
+                }, 10);
+            },
+            sorter: function(items){
+                return items.sort(function(a, b){
+                    if(a.sort < b.sort) return 1;
+                    if(a.sort > b.sort) return -1;
+                    return 0;
+                });
+            },
+            autoSelect: false
+        };
         $('.typeahead[data-point="ounboundPoint"]')
         .removeAttr('disabled')
-        .typeahead({
-            source: cities.filter(function (item) {
-                return item.outbound != 0;
-            }).map(function(item) {
-                return item.name;
+        .typeahead($.extend({}, commonTypeaheadOptions, {
+            source: outCities.map(function(item) {
+                return {
+                    id: item.name,
+                    name : item.name + '<span>'+ item.outbound + '</span>',
+                    sort: item.outbound
+                };
             }),
-            autoSelect: false
-        });
+            $element: $('.typeahead[data-point="ounboundPoint"]')
+        }));
         $('.typeahead[data-point="inboundPoint"]')
         .removeAttr('disabled')
-        .typeahead({
-            source: cities.filter(function (item) {
-                return item.inbound != 0;
-            }).map(function(item) {
-                return item.name;
+        .typeahead($.extend({}, commonTypeaheadOptions, {
+            source: inCities.map(function(item) {
+                return {
+                    id: item.name,
+                    name : item.name + '<span>'+ item.inbound + '</span>',
+                    sort: item.inbound
+                };
             }),
-            autoSelect: false
-        });
+            $element: $('.typeahead[data-point="inboundPoint"]')
+        }));
         $('#cityList').siblings('.loader').hide();
     });
 
