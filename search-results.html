@@ -4,11 +4,16 @@
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/bootstrap.css"/>
+	<link rel="stylesheet" type="text/css" href="css/typeahead.css">
+    <link rel="stylesheet" type="text/css" href="css/gui-form.css">
 	<link rel="stylesheet" href="css/main.css"/>
 	<script src="js/jquery-1.11.3.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery.formstyler.min.js"></script>
+	<script src="js/bootstrap-typeahead.min.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/jquery-listnav.js"></script>
+    <script src="js/list.js"></script>
 	<title>Document</title>
 </head>
 <body>
@@ -125,55 +130,74 @@
 						</div>
 					</div>
 				</div>
-				<div class="search-form center res-search">
-					<h2 class="search-title">Search Form</h2>
-					<div class="search-filter">
-						<form action="#">
-						  <fieldset class="row">
-						    <div class="select col-xs-12 col-sm-5 col-sm-offset-1">
-							    <select name="speed">
-							      <option>Slower</option>
-							      <option>Slow</option>
-							      <option selected="selected">Tokio</option>
-							      <option>Fast</option>
-							      <option>Faster</option>
-							    </select>
-						    </div>
-						 
-						    <div class="select col-xs-12 col-sm-5 ">
-							    <select name="speed">
-							      <option>Slower</option>
-							      <option>Slow</option>
-							      <option selected="selected">Istambul</option>
-							      <option>Fast</option>
-							      <option>Faster</option>
-							    </select>
-						    </div>
-						 
-						    <div class="select select__mod1 col-xs-12 col-sm-5 col-md-7 col-md-offset-1 col-sm-offset-1">
-							    <select name="speed">
-							      <option>Slower</option>
-							      <option>Slow</option>
-							      <option selected="selected">43 items</option>
-							      <option>Fast</option>
-							      <option>Faster</option>
-							    </select>
-						    </div>
-
-						    <div class="select select__mod1 col-xs-12 col-sm-5 col-md-3 volume">
-							    <select name="speed">
-							      <option>Slower</option>
-							      <option>Slow</option>
-							      <option selected="selected">356</option>
-							      <option>Fast</option>
-							      <option>Faster</option>
-							    </select>
-						    </div>
-						    <button class="btn1 col-xs-9 col-sm-9 col-md-4">Search</button>
-						  </fieldset>	 
-						</form>
-					</div>
-				</div>
+				                <div class="search-form center">
+                    <h2 class="search-f-title">Search Form</h2>
+                    <div class="search-filter">
+                        <form action="#" autocomplete="false">
+                            <fieldset class="row">
+                                <div class="select col-xs-12 col-sm-5 col-sm-offset-1">
+                                    <div class="control-wrap">
+                                        <input type="text" class="typeahead" data-type="location" data-point="ounboundPoint" placeholder="From" data-toggle="closePopup" required>
+                                        <a href="#" class="dropdown-arr"></a>
+                                    </div>
+                                </div>
+                                <div class="select col-xs-12 col-sm-5">
+                                    <div class="control-wrap">
+                                        <input type="text" class="typeahead" data-type="location" data-point="inboundPoint" placeholder="To" data-toggle="closePopup" required>
+                                        <a href="#" class="dropdown-arr"></a>
+                                    </div>
+                                </div>
+                                <div class="select select__mod1 col-xs-12 col-sm-5 col-md-7 col-md-offset-1 col-sm-offset-1 hidden-xs">
+                                    <div class="control-wrap">
+                                        <!-- <input type="text" data-type="logguage"> -->
+                                        <span class="fake-input" data-type="logguage">Choose</span>
+                                        <a href="#" class="dropdown-arr"></a>
+                                    </div>
+                                </div>
+                                <div class="select select__mod1 col-xs-12 col-sm-5 col-md-3 volume">
+                                    <input type="text" id="volume" class="valueNum" placeholder="Volume" required>
+                                </div>
+                                <button class="btn1 col-xs-11 col-sm-9 col-md-4">Search</button>
+                                
+                            </fieldset>
+                            <!-- cities list -->
+                            <div class="hiddenCont" data-type="location">
+                                <div class="container">
+                                    <div class="gui-form gui-form2 add-new-destination">
+                                        <div class="content">
+                                            <div class="loader">
+                                                <div class="spinner">
+                                                  <div class="dot1"></div>
+                                                  <div class="dot2"></div>
+                                                </div>
+                                            </div>
+                                            <ul id="cityList" class="row"></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hiddenCont" data-type="logguage">
+                                <div class="container">
+                                    <div class="gui-form gui-form1 add-new-destination">
+                                        <div class="content">
+                                            <div class="loader">
+                                                <div class="spinner">
+                                                  <div class="dot1"></div>
+                                                  <div class="dot2"></div>
+                                                </div>
+                                            </div>
+                                            <ul id="goodsList" class="row"></ul>
+                                             <div class="row">
+                                                <button type="button" class="btn1 col-xs-11 col-sm-9 col-md-4" data-toggle="closePopup">Close</button>
+                                                <button type="button" class="btn2 col-xs-11 col-sm-9 col-md-4" data-toggle="resetCheck">Reset</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
 			</div>
 		</div>
 	</section>

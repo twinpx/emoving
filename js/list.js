@@ -1,6 +1,7 @@
 jQuery(document).ready(function() {
     var cities = [];
-    $.getJSON("json/jsonCities.js")
+    // $.getJSON("json/jsonCities.js")
+    $.getJSON("http://emoving.2px.ru/json/jsonCities.js")
     .done(function(data) {
         var cities = data.map(function (it) {
             return it;
@@ -95,7 +96,8 @@ jQuery(document).ready(function() {
         $('#cityList').siblings('.loader').hide();
     });
 
-    $.getJSON("json/jsonValues.js")
+    // $.getJSON("json/jsonValues.js")
+    $.getJSON("http://emoving.2px.ru/json/jsonValues.js")
     .done(function(data) {
         var list = '';
         var groups = {};
@@ -104,9 +106,9 @@ jQuery(document).ready(function() {
             group.ELEMENTS.map(function (item) {
                 list += '<li class="col-sm-4 ' + group.NAME.replace(/\/|\\|\s/g, '-') + '"><span class="item" data-id="' + item.id + '"><span class="cityName">' + item.name + '</span>' +
                     '<span class="count" data-volume="' + item.volume + '">' +
-                    '<a href="javascript:void(0);" onclick="updateVolume(this, 1);">+</a> ' +
+                    '<a href="javascript:void(0);" onclick="updateVolume(this, -1);">-</a> ' +
                     '<input readonly name="goods['+ item.id +']" type="text" value="0">' +
-                    ' <a href="javascript:void(0);" onclick="updateVolume(this, -1);">-</a>' +
+                    ' <a href="javascript:void(0);" onclick="updateVolume(this, +1);">+</a>' +
                     '</span>' +
                     '</span></li>';
             });

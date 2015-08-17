@@ -166,7 +166,7 @@
     text-decoration: none;
 }
 
-.gui-form .content .item .count a:last-child {
+.gui-form .content .item .count a:first-child {
     position: relative;
     top: -2px;
 }
