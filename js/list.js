@@ -1,7 +1,7 @@
 jQuery(document).ready(function() {
     var cities = [];
-    // $.getJSON("json/jsonCities.js")
-    $.getJSON("http://emoving.2px.ru/json/jsonCities.js")
+    $.getJSON("/json/jsonCities.js")
+    //$.getJSON("http://emoving.2px.ru/json/jsonCities.js")
     .done(function(data) {
         var cities = data.map(function (it) {
             return it;
@@ -97,7 +97,7 @@ jQuery(document).ready(function() {
     });
 
     // $.getJSON("json/jsonValues.js")
-    $.getJSON("http://emoving.2px.ru/json/jsonValues.js")
+    $.getJSON("/json/jsonValues.js")
     .done(function(data) {
         var list = '';
         var groups = {};
