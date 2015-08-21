@@ -97,13 +97,17 @@
 .gui-form .content .item {
     font-size: 18px;
     color: #333;
-    padding: 5px 30px 5px;
+    padding: 5px 0px 5px;
     position: relative;
     clear: none;
     display: block;
     list-style: none;
     cursor: pointer;
     text-decoration: none;
+}
+
+.gui-form .content .item > .cityName{
+  width:100%;padding:0 30px;display:inline-block;vertical-align:top;
 }
 
 .gui-form .content .item:after {
