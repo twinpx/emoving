@@ -164,6 +164,25 @@ jQuery(document).ready(function() {
         $('.dropdown-arr').removeClass('active');
     });
 
+    $('body').on('click', function(e){
+        var e = e || event;
+        var $input = $('.fake-input.active'),
+            $drop_ico = $('.dropdown-arr.active');
+
+        if($input.length && $('div[data-type="'+$input.data('type')+'"]').is(':visible')){
+
+            if(e.target !== $input[0] && e.target !== $drop_ico[0] && e.target !== $('div[data-type="'+$input.data('type')+'"]')[0] && !$(e.target).closest('div[data-type="'+$input.data('type')+'"]').length){
+           
+                 if ($('.dropdown-arr, .fake-input').hasClass('active')) {
+                    $('.hiddenCont')
+                    .slideUp();
+                    $('.dropdown-arr, .fake-input').removeClass('active');
+                    return false;
+                }
+            }
+        }
+    })
+
     $('.dropdown-arr, .fake-input').on('click', function(e) {
         var $el = $(this).parents('.control-wrap');
         e.preventDefault();
@@ -172,11 +191,31 @@ jQuery(document).ready(function() {
             $('.hiddenCont')
             .slideUp();
             $(this).removeClass('active');
+
+            if($(this).hasClass('.dropdown-arr')){
+                $('.fake-input').removeClass('active');
+            }else if($(this).hasClass('.fake-input')){
+                $('.dropdown-arr').removeClass('active');
+            }
+
             return false;
         }
 
         $('.dropdown-arr').removeClass('active');
+         if($(this).hasClass('.dropdown-arr')){
+                $('.fake-input').removeClass('active');
+            }else if($(this).hasClass('.fake-input')){
+                $('.dropdown-arr').removeClass('active');
+            }
+
         $(this).addClass('active');
+
+         if($(this).hasClass('.dropdown-arr')){
+            $(this).siblings().addClass('active');
+        }else if($(this).hasClass('fake-input')){
+            $(this).siblings().addClass('active');
+        }
+
         if ($('input', $el).data('type') == 'location') {
             var $cityPoint = $('input', $el).data('point');
             $('.hiddenCont')
