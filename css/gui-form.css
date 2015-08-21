@@ -23,12 +23,12 @@
       width: 30px;
       height: 30px;
       overflow: hidden;
-      background: url(../images/sprites.png) left top no-repeat;
+      background: url(../images/sprites.png) 0 2px no-repeat;
   }
 }
 
 .dropdown-arr.active {
-    background-position: left -45px;
+    background-position: left -43px;
 }
 
 .hiddenCont {
@@ -160,7 +160,7 @@
     font-size: 22px;
     color: #10a8ef;
     font-family: initial;
-    font-weight: 900;
+    font-weight: normal;
 }
 
 .gui-form .content .item .count a:hover,
@@ -172,7 +172,7 @@
 
 .gui-form .content .item .count a:first-child {
     position: relative;
-    top: -2px;
+    top: -1px;
 }
 
 .gui-form .content .item .count {
