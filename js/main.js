@@ -1,3 +1,4 @@
+var Modules = (function(self){ return self; }(Modules || {}));
 $(function() {
 
   if ($('select').length) {
@@ -23,6 +24,14 @@ $(function() {
     $('.fileup').val(file_name);
 
   });
+
+  if($('.accordion__lk').length){
+    new Modules.Accordion({
+        $lk: $('.accordion__lk'),
+        parent: '.accordion__it',
+        cnt: '.accordion__cnt'
+      });
+  }
 
 
 
