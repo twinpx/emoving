@@ -169,9 +169,10 @@ jQuery(document).ready(function() {
         var $input = $('.fake-input.active'),
             $drop_ico = $('.dropdown-arr.active');
 
-        console.log('in')
+        if(!$input.length)
+            $input = $drop_ico.siblings('input')
 
-        if($input.length && $('div[data-type="'+$input.data('type')+'"]').is(':visible')){
+        if($drop_ico.length && $('div[data-type="'+$input.data('type')+'"]').is(':visible')){
 
             if(e.target !== $input[0] && e.target !== $drop_ico[0] && e.target !== $('div[data-type="'+$input.data('type')+'"]')[0] && !$(e.target).closest('div[data-type="'+$input.data('type')+'"]').length){
            
@@ -189,49 +190,49 @@ jQuery(document).ready(function() {
         var $el = $(this).parents('.control-wrap');
         e.preventDefault();
 
-        if ($(this).hasClass('active')) {
-            $('.hiddenCont')
-            .slideUp();
-            $(this).removeClass('active');
+            if ($(this).hasClass('active')) {
+                $('.hiddenCont')
+                .slideUp();
+                $(this).removeClass('active');
 
-            if($(this).hasClass('dropdown-arr')){
-                $('.fake-input').removeClass('active');
-            }else if($(this).hasClass('.fake-input')){
-                $('.dropdown-arr').removeClass('active');
+                if($(this).hasClass('dropdown-arr') && !$(this).siblings('.dropdown-menu').length){
+                    $('.fake-input').removeClass('active');
+                }else if($(this).hasClass('.fake-input') && !$(this).siblings('.dropdown-menu').length){
+                    $('.dropdown-arr').removeClass('active');
+                }
+
+                return false;
             }
 
-            return false;
-        }
+            $('.dropdown-arr').removeClass('active');
 
-        $('.dropdown-arr').removeClass('active');
+             if($(this).hasClass('dropdown-arr') && !$(this).siblings('.dropdown-menu').length){
+                    $('.fake-input').removeClass('active');
+                }else if($(this).hasClass('.fake-input') && !$(this).siblings('.dropdown-menu').length){
+                    $('.dropdown-arr').removeClass('active');
+                }
 
-         if($(this).hasClass('dropdown-arr')){
-                $('.fake-input').removeClass('active');
-            }else if($(this).hasClass('.fake-input')){
-                $('.dropdown-arr').removeClass('active');
+            $(this).addClass('active');
+
+             if($(this).hasClass('dropdown-arr') && !$(this).siblings('.dropdown-menu').length){
+                $(this).siblings().addClass('active');
+            }else if($(this).hasClass('fake-input') && !$(this).siblings('.dropdown-menu').length){
+                $(this).siblings().addClass('active');
             }
 
-        $(this).addClass('active');
-
-         if($(this).hasClass('dropdown-arr')){
-            $(this).siblings().addClass('active');
-        }else if($(this).hasClass('fake-input')){
-            $(this).siblings().addClass('active');
-        }
-
-        if ($('input', $el).data('type') == 'location') {
-            var $cityPoint = $('input', $el).data('point');
-            $('.hiddenCont')
-            .slideUp()
-            .filter('[data-type="location"]')
-            .attr('id', $cityPoint)
-            .slideDown();
-        } else {
-            $('.hiddenCont')
-            .slideUp()
-            .filter('[data-type="logguage"]')
-            .slideDown();
-        }
+            if ($('input', $el).data('type') == 'location') {
+                var $cityPoint = $('input', $el).data('point');
+                $('.hiddenCont')
+                .slideUp()
+                .filter('[data-type="location"]')
+                .attr('id', $cityPoint)
+                .slideDown();
+            } else {
+                $('.hiddenCont')
+                .slideUp()
+                .filter('[data-type="logguage"]')
+                .slideDown();
+            }
     });
     $('[data-toggle="closePopup"]').on('click', function(){
         $('.hiddenCont').slideUp(function(){
