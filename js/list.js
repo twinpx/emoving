@@ -106,7 +106,7 @@ jQuery(document).ready(function() {
             group.ELEMENTS.map(function (item) {
                 list += '<li class="col-sm-4 ' + group.NAME.replace(/\/|\\|\s/g, '-') + '"><span class="item" data-id="' + item.id + '"><span class="cityName">' + item.name + '</span>' +
                     '<span class="count" data-volume="' + item.volume + '">' +
-                    '<a href="javascript:void(0);" onclick="updateVolume(this, -1);">-</a> ' +
+                    '<a href="javascript:void(0);" onclick="updateVolume(this, -1);" class="count_type_minus">—</a> ' +
                     '<input readonly name="goods['+ item.id +']" type="text" value="0">' +
                     ' <a href="javascript:void(0);" onclick="updateVolume(this, +1);">+</a>' +
                     '</span>' +
@@ -169,6 +169,8 @@ jQuery(document).ready(function() {
         var $input = $('.fake-input.active'),
             $drop_ico = $('.dropdown-arr.active');
 
+        console.log('in')
+
         if($input.length && $('div[data-type="'+$input.data('type')+'"]').is(':visible')){
 
             if(e.target !== $input[0] && e.target !== $drop_ico[0] && e.target !== $('div[data-type="'+$input.data('type')+'"]')[0] && !$(e.target).closest('div[data-type="'+$input.data('type')+'"]').length){
@@ -192,7 +194,7 @@ jQuery(document).ready(function() {
             .slideUp();
             $(this).removeClass('active');
 
-            if($(this).hasClass('.dropdown-arr')){
+            if($(this).hasClass('dropdown-arr')){
                 $('.fake-input').removeClass('active');
             }else if($(this).hasClass('.fake-input')){
                 $('.dropdown-arr').removeClass('active');
@@ -202,7 +204,8 @@ jQuery(document).ready(function() {
         }
 
         $('.dropdown-arr').removeClass('active');
-         if($(this).hasClass('.dropdown-arr')){
+
+         if($(this).hasClass('dropdown-arr')){
                 $('.fake-input').removeClass('active');
             }else if($(this).hasClass('.fake-input')){
                 $('.dropdown-arr').removeClass('active');
@@ -210,7 +213,7 @@ jQuery(document).ready(function() {
 
         $(this).addClass('active');
 
-         if($(this).hasClass('.dropdown-arr')){
+         if($(this).hasClass('dropdown-arr')){
             $(this).siblings().addClass('active');
         }else if($(this).hasClass('fake-input')){
             $(this).siblings().addClass('active');

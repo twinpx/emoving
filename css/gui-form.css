@@ -97,7 +97,7 @@
 .gui-form .content .item {
     font-size: 18px;
     color: #333;
-    padding: 5px 0px 5px;
+    padding: 5px 30px 5px;
     position: relative;
     clear: none;
     display: block;
@@ -106,7 +106,10 @@
     text-decoration: none;
 }
 
-.gui-form .content .item > .cityName{
+.logguage__w .gui-form .content .item{
+   padding: 5px 0;
+}
+.logguage__w .gui-form .content .item > .cityName{
   width:100%;padding:0 30px;display:inline-block;vertical-align:top;
 }
 
@@ -127,17 +130,21 @@
 .gui-form .content .item.current {
     color: #10a8ef;
     background-image: url(../images/check.png);
-    background-position: 12px 13px;
+    background-position: 14px 13px;
     background-repeat: no-repeat;
 }
 
 .gui-form .content .item .count {
     position: absolute;
-    top: 3px;
+    top: 0;
     right: 19px;
     background-color: #fff;
     padding: 0 0 0 15px;
 }
+
+.cityName,
+.outbound,
+.inbound{font-size:18px;}
 
 .gui-form .content .item .outbound,
 .gui-form .content .item .inbound {
@@ -157,10 +164,11 @@
 }
 
 .gui-form .content .item .count a {
-    font-size: 22px;
+    font-size: 24px;
     color: #10a8ef;
     font-family: initial;
     font-weight: normal;
+    vertical-align:middle;
 }
 
 .gui-form .content .item .count a:hover,
@@ -173,6 +181,7 @@
 .gui-form .content .item .count a:first-child {
     position: relative;
     top: -1px;
+    font-size:17px;
 }
 
 .gui-form .content .item .count {
@@ -217,16 +226,16 @@
   border: 0;
   width: 20px;
   display: inline-block;
-  vertical-align: top;
+  vertical-align: middle;
   height: 25px;
   line-height: 25px;
-  margin: 5px 0 0 0;
   background: transparent;
   color: #10a8ef;
   text-align: center;
   border-right: 0;
   padding: 0;
-  font-size: 14px;
+  font-size: 18px;
+  margin:0;
 }
 
 .gui-form2 .title a,
