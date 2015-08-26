@@ -106,9 +106,9 @@ jQuery(document).ready(function() {
             group.ELEMENTS.map(function (item) {
                 list += '<li class="col-sm-4 ' + group.NAME.replace(/\/|\\|\s/g, '-') + '"><span class="item" data-id="' + item.id + '"><span class="cityName">' + item.name + '</span>' +
                     '<span class="count" data-volume="' + item.volume + '">' +
-                    '<a href="javascript:void(0);" onclick="updateVolume(this, -1);" class="count_type_minus">—</a> ' +
+                    '<a href="javascript:void(0);" onclick="updateVolume(this, -1);" class="count_type_minus"></a> ' +
                     '<input readonly name="goods['+ item.id +']" type="text" value="0">' +
-                    ' <a href="javascript:void(0);" onclick="updateVolume(this, +1);">+</a>' +
+                    ' <a href="javascript:void(0);" onclick="updateVolume(this, +1);" class="count_type_plus"></a>' +
                     '</span>' +
                     '</span></li>';
             });

@@ -7,6 +7,9 @@
     z-index: 1020;
     top: 75px;
 }
+  .hiddenCont .container{
+    padding-left:10px;padding-right:10px;
+  }
 
 .hiddenCont[data-type="logguage"] {
     top: 155px;
@@ -41,7 +44,7 @@
 .gui-form {
     background: #fff;
     box-shadow: rgba(0, 0, 0, 0.1) 0 3px 7px 0;
-    padding: 34px 7px 41px;
+    padding: 34px 3px 41px;
     margin: 0 0 0 0;
     text-align: center;
 }
@@ -62,7 +65,7 @@
 .gui-form .ln-letters {
     display: flex;
     justify-content: space-between;
-    margin: 0 15px 24px;
+    margin: 0 30px 26px;
 }
 
 .gui-form .title a,
@@ -97,7 +100,7 @@
 .gui-form .content .item {
     font-size: 18px;
     color: #333;
-    padding: 5px 30px 5px;
+    padding: 3px 30px 3px;
     position: relative;
     clear: none;
     display: block;
@@ -136,11 +139,28 @@
 
 .gui-form .content .item .count {
     position: absolute;
-    top: 0;
+    top: 50%;
     right: 19px;
     background-color: #fff;
     padding: 0 0 0 15px;
+    transform:translate(0, -50%);
 }
+
+.count_type_minus{
+  width:13px;height:13px;display:inline-block;background-position:0 50%;background-repeat:no-repeat;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAABCAMAAAAy99Q1AAAABlBMVEUQqO+P1vjml3pnAAAADUlEQVQI12NgZEAARgAAHAADVSdFJwAAAABJRU5ErkJggg==);
+}
+  .count_type_minus:hover{
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAABCAMAAAAy99Q1AAAAA1BMVEX3cQFW0iCuAAAACklEQVR4AWNAAQAADgABfo4SRQAAAABJRU5ErkJggg==);
+  }
+
+  .count_type_plus{
+     width:13px;height:13px;display:inline-block;background-repeat:no-repeat;
+     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAMAAABFNRROAAAADFBMVEWP1vj///8QqO+P1vh9CaqnAAAAAnRSTlMAAHaTzTgAAAAtSURBVHgBY2AEA2YIDeUxARnk8cAcBmYmBGBmYECWgwAgD8pA5hG2gYEZwgAAPtsAqND/jL8AAAAASUVORK5CYII=);
+  }
+  .count_type_plus:hover{
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAMAAABFNRROAAAABlBMVEX////3cQGkas4KAAAAAXRSTlMAQObYZgAAABRJREFUeAFjgABGCEUlHiMyoIUNAAmZABqME5otAAAAAElFTkSuQmCC);
+  }
 
 .cityName,
 .outbound,
