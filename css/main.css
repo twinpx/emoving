@@ -4185,4 +4185,15 @@ h2.about{
 .accordion__cnt{
   display:none;font-size:18px;
 }
-.p stron, p b{font-size:18px; color:#000}
+
+.p stron, p b
+{
+	font-size:18px; 
+	color:#000;
+}
+
+.footer-link
+{
+	font-size: 14px;
+	color: #fc440e !important;
+}
