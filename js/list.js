@@ -16,6 +16,7 @@ jQuery(document).ready(function() {
 
         var list = '';
         cities.map(function(item) {
+
             var $i = '';
             var $b = '';
             if (item.outbound == '0') {
@@ -24,7 +25,7 @@ jQuery(document).ready(function() {
             if (item.inbound == '0') {
                 $b = 'inbound-null';
             }
-            list += '<li class="col-sm-4"><a class="item ' + $i + ' ' + $b + '"><span class="cityName">' + item.name + '</span><span class="outbound">' + item.outbound + '</span><span class="inbound">' + item.inbound + '</span></a></li>';
+            list += '<li class="col-sm-4"><a data-id="'+item.id+'" class="item ' + $i + ' ' + $b + '"><span class="cityName">' + item.name + '</span><span class="outbound">' + item.outbound + '</span><span class="inbound">' + item.inbound + '</span></a></li>';
             return item;
         });
         $('#cityList')
@@ -153,14 +154,15 @@ jQuery(document).ready(function() {
         $('#volume').val((volume + parseFloat($el.data('volume')) * cnt).toFixed(2));
     };
 
-    $('#cityList').on('click', '.item', function(e) {
+    $('#cityList').on('click', '.item', function(e){
         var cityPoint = $(this).parents('.hiddenCont').attr('id');
-        var itemValue = $('.cityName', this).text();
+        var itemValue = $('.cityName', this).text(),
+            city_id = $(this).data('id');
+
         $('[data-point="' + cityPoint + '"]').val(itemValue);
-        $('.hiddenCont')
-        .slideUp()
-        .attr('id', cityPoint)
-        ;
+        $('[data-point="' + cityPoint + '_h"]').val(city_id);
+        $('.hiddenCont').slideUp().attr('id', cityPoint);
+
         $('.dropdown-arr').removeClass('active');
     });
 
