@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/typeahead.css" />
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.formstyler.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap-typeahead.min.js"></script>
-    <script src="js/typeahead.js"></script>
+    <!-- typeahead plugin -->
+    <link rel="stylesheet" type="text/css" href="css/typeahead.css">
+    <!-- alphabetical list -->
+    <link rel="stylesheet" type="text/css" href="css/gui-form.css">
+    <script src="js/jquery-listnav.js"></script>
+    <script src="js/list.js"></script>
     <script src="js/hide_message.js"></script>
     <title>Document</title>
 </head>
@@ -38,11 +42,17 @@
                     <div class="search-filter search-filter_type_val">
                         <form action="07_w_add_form_message.html">
                             <fieldset>
-                                <div class="col-xs-12 col-sm-6 more-w">
-                                    <input type="text" required placeholder="From" class="typeahead" disabled="disabled">
+                                <div class="select col-xs-12 col-sm-6 more-w">
+                                   <div class="control-wrap">
+                                        <input type="text" class="typeahead" data-type="location" data-point="ounboundPoint" placeholder="From" data-toggle="closePopup" required autocomplete="off">
+                                        <a href="#" class="dropdown-arr"></a>
+                                    </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-6 more-w">
-                                    <input type="text" required placeholder="To" class="typeahead" disabled="disabled">
+                                <div class="select col-xs-12 col-sm-6 more-w">
+                                   <div class="control-wrap">
+                                        <input type="text" class="typeahead" data-type="location" data-point="inboundPoint" placeholder="To" data-toggle="closePopup" required autocomplete="off">
+                                        <a href="#" class="dropdown-arr"></a>
+                                    </div>
                                 </div>
                                 <div class="item">
                                     <div class="left">
@@ -190,8 +200,24 @@
                                 <button class="btn1 col-xs-11 col-sm-9 col-md-4">Add</button>
                                 <a value='cancel' class="btn2 col-xs-11 col-sm-9 col-md-4">cancel</a>
                             </fieldset>
-                        </form>
-                    </div>
+                            <!-- cities list -->
+                                <div class="hiddenCont location__w" data-type="location">
+                                    <div class="container">
+                                        <div class="gui-form gui-form2 add-new-destination">
+                                            <div class="content">
+                                                <div class="loader">
+                                                    <div class="spinner">
+                                                      <div class="dot1"></div>
+                                                      <div class="dot2"></div>
+                                                    </div>
+                                                </div>
+                                                <ul id="cityList" class="row"></ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     <div class="no-money">You do not have sufficient funds.</div>
                 </div>
             </div>
