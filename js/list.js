@@ -139,6 +139,32 @@ jQuery(document).ready(function() {
         $list.siblings('.loader').hide();
     });
 
+
+    $('.search-filter button[type="submit"]').on('click', function(e){
+
+        var val_1 = $('input[data-point="ounboundPoint"]').val();
+        var val_2 = $('input[data-point="inboundPoint"]').val();
+
+        var id_1 = '',
+            id_2 = '';
+
+        $.each($('a.item'), function(index, val) {
+            
+            if($.trim($(this).children('.cityName').text()) == $.trim(val_1))
+                id_1 = $(this).data('id');
+        });
+
+        $.each($('a.item'), function(index, val) {
+
+            if($.trim($(this).children('.cityName').text()) == $.trim(val_2))
+                id_2 = $(this).data('id');
+        });
+
+        $('input[data-point="ounboundPoint_h"]').val(id_1)
+        $('input[data-point="inboundPoint_h"]').val(id_2)
+
+    });
+
     window.updateVolume = function(el, cnt) {
         var $el = $(el).parent('.count');
         var count = $el.find('input[type=text]').val();

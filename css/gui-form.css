@@ -343,3 +343,6 @@
     -webkit-transform: scale(1.0);
   }
 }
+
+.filter_without_num .outbound,
+.filter_without_num .inbound{display:none !important;}
