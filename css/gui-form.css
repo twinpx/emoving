@@ -3,7 +3,7 @@
 }
 
 .hiddenCont {
-    position: absolute;
+    position: absolute;filter_without_num
     z-index: 1020;
     top: 75px;
 }
@@ -63,8 +63,17 @@
 
 .gui-form .title,
 .gui-form .ln-letters {
+   display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
     display: flex;
-    justify-content: space-between;
+
+     -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
     margin: 0 30px 26px;
 }
 
@@ -346,3 +355,10 @@
 
 .filter_without_num .outbound,
 .filter_without_num .inbound{display:none !important;}
+
+.filter_without_num .btn2{
+  padding:17px 10px 16px;
+}
+.filter_without_num .hiddenCont{
+  left:-70px;
+}

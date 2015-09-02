@@ -465,7 +465,9 @@ h2.search-f-title{
   }
     .volume:after{
       margin:-15px 33px 0 0;position:absolute;right:0;top:50%;content:'cbm';font-size:18px;color:#A9A9A9;
-      transform:translate(0, -50%);
+       -webkit-transform:translate(0, -50%);
+     -ms-transform:translate(0, -50%);
+         transform:translate(0, -50%);
     }
 
 .jq-selectbox__dropdown {
@@ -560,7 +562,7 @@ h2.search-f-title{
 
   border-top: 1px solid #f6f6f6;
 
-  padding: 20px 0 8px;
+  padding: 10px 0 10px;
 
 }
 

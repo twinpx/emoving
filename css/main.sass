@@ -524,7 +524,9 @@ h2
   }
     .volume:after{
       margin:-15px 33px 0 0;position:absolute;right:0;top:50%;content:'cbm';font-size:18px;color:#A9A9A9;
-      transform:translate(0, -50%);
+       -webkit-transform:translate(0, -50%);
+     -ms-transform:translate(0, -50%);
+         transform:translate(0, -50%);
     }
 .add-new-destination .btn2{
 	display:inline-block;
@@ -579,6 +581,13 @@ h2
 .fileup{
 
   background: #fff url(../images/fileup.png) 97.5% 50% no-repeat !important;
+
+}
+.search-results__best-deal__item {
+
+  border-top: 1px solid #f6f6f6;
+
+  padding: 10px 0 10px;
 
 }
 
