@@ -35,7 +35,7 @@
 }
 
 .hiddenCont {
-    display: none;
+    display: none;z-index:1;
 }
 
 .gui-form a {

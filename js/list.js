@@ -286,6 +286,12 @@ jQuery(document).ready(function() {
             $(this).removeClass('current');
             var $input = $('input', this);
             updateVolume($input, -parseInt($input.val()));
+            
         });
+
+           if ($('.dropdown-arr, .fake-input').hasClass('active')) {
+                $('.hiddenCont').slideUp();
+                   $('.dropdown-arr, .fake-input').removeClass('active');
+            }
     });
 });
