@@ -80,9 +80,16 @@
 .gui-form .title a,
 .gui-form .ln-letters a {
     font-size: 18px;
-    color: #ff7011;
+    color: #ff9f4d;
     /*margin: 0 0 0 15px;*/
 }
+
+.logguage__w .gui-form1.gui-form .ln-letters{
+  display:block;text-align:left;
+}
+  .logguage__w .gui-form1.gui-form .ln-letters a{
+    margin:0 12px 0 0;display:inline-block;vertical-align:top;
+  }
 
 .gui-form .title a:hover,
 .gui-form .ln-letters a:hover {
