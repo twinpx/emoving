@@ -293,4 +293,51 @@ jQuery(document).ready(function() {
                    $('.dropdown-arr, .fake-input').removeClass('active');
             }
     });
+
+
+    $('.search-filter button[type="submit"]').on('click', function(e){
+        var $in_1 = $('input[data-point="ounboundPoint"]'), 
+            $in_2 = $('input[data-point="inboundPoint"]'),
+            trigg_1 = false,
+            trigg_2 = false,
+            $obj = '';
+
+        $.each($('.location__w .cityName'), function(index, val) {
+            $obj = $(this);
+
+            if($.trim($obj.text()) == $in_1.val())
+                trigg_1 = true;
+
+            if($.trim($obj.text()) == $in_2.val())
+                trigg_2 = true;
+
+            if(trigg_1 && trigg_2)
+                return;
+        });
+
+
+        if(!trigg_1 && $in_1.val()){
+            $in_1.addClass('input_error');
+            if(!$('.error_type_hide').is(':visible'))
+                $('.error_type_hide').show();
+
+            e.preventDefault();
+        }
+
+        if(!trigg_2 && $in_2.val()){
+            $in_2.addClass('input_error');
+            if(!$('.error_type_hide').is(':visible'))
+                $('.error_type_hide').show();
+
+             e.preventDefault();
+        }
+
+    });
+
+    $(document).on('focus', '.input_error', function(){
+        if($('.input_error').length == 1)
+            $('.error_type_hide').hide();
+
+        $(this).removeClass('input_error');
+    })
 });

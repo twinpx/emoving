@@ -369,3 +369,10 @@
 .filter_without_num .hiddenCont{
   left:-70px;
 }
+
+.error_type_hide{
+  margin:0 auto 12px !important;display:none;
+}
+.input_error{
+  border:1px solid red !important;
+}
