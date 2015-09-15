@@ -1478,6 +1478,18 @@ footer {
 
 }
 
+.search-filter input.i-warning,
+
+.search-filter input.i-warning,
+
+.search-filter textarea.i-warning,
+
+.search-filter textarea.i-warning{
+
+  border: 1px solid #cc0000;
+
+}
+
 
 
 .text{
