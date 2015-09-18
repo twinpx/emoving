@@ -4208,6 +4208,11 @@ h2.about{
 
 .footer-link
 {
-	font-size: 14px;
-	color: #fc440e !important;
+	font-size:14px;
+	color: #ff701f !important;
 }
+.footer-link:hover
+{
+	color: #fc440e;
+}
+
