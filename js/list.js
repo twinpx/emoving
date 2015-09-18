@@ -165,7 +165,7 @@ jQuery(document).ready(function() {
 
     });
 
-    window.updateVolume = function(el, cnt) {
+    window.updateVolume = function(el, cnt){
         var $el = $(el).parent('.count');
         var count = $el.find('input[type=text]').val();
         var updateValue = parseInt(count) + cnt;
@@ -178,6 +178,18 @@ jQuery(document).ready(function() {
         $el.find('input[type=text]').val(updateValue);
         var volume = parseFloat($('#volume').val()) || 0;
         $('#volume').val((volume + parseFloat($el.data('volume')) * cnt).toFixed(2));
+
+        var name = $.trim($el.prev('.cityName').text());
+
+        if(updateValue == 0)
+            delete chose_obj[name];
+
+        if(name in chose_obj){
+            chose_obj[name] = parseInt(chose_obj[name]) + cnt;
+        }
+
+        addToFakeInput()
+            
     };
 
     $('#cityList').on('click', '.item', function(e){
@@ -190,6 +202,7 @@ jQuery(document).ready(function() {
         $('.hiddenCont').slideUp().attr('id', cityPoint);
 
         $('.dropdown-arr').removeClass('active');
+
     });
 
     $('body').on('click', function(e){
@@ -268,18 +281,46 @@ jQuery(document).ready(function() {
         });
     });
 
+    /**
+        var chose_obj = {};
+        updateVolume
+    */
+
+    var chose_obj = {};
+
     $('#goodsList').on('click', '.item .cityName', function(){
         var $parentBlock = $(this).parents('.item');
         var $input = $('input', $parentBlock);
         if($(this).parents('.item').hasClass('current') == false) {
             updateVolume($input, 1);
             $(this).parents('.item').addClass('current');
+            chose_obj[$.trim($(this).text())] = 1;
+
+            addToFakeInput();
         }
         else {
             $(this).parents('.item').removeClass('current');
             updateVolume($input, -parseInt($input.val()));
+
+            delete chose_obj[$.trim($(this).text())];
+
+            addToFakeInput();
         }
     });
+
+
+    function addToFakeInput(){
+        var string = "";
+
+        for (prop in chose_obj){
+            if(!string)
+                string = chose_obj[prop];
+            else
+                string += "+"+chose_obj[prop];
+        }
+
+        $('.fake-input[data-type="logguage"]').text(string);
+    }
 
     $('[data-toggle="resetCheck"]').on('click', function(){
         $('#goodsList .item.current').each(function(){
